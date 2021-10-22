@@ -153,6 +153,7 @@ public class UsersController {
             tenantUser.setTenantName(foundTenant.getTenantName());
             activeTenantUserList.add(tenantUser);
           }
+          }
           if (!(activeTenantUserList.isEmpty())) {
             users.setTenantUser(activeTenantUserList);
           }
@@ -162,7 +163,7 @@ public class UsersController {
       if (usersList.isEmpty() || activeUserList.isEmpty()) {
         throw new UserNotFoundException("There are no Users present");
       }
-    }
+    
     return new ResponseEntity < List < Users >> (activeUserList, HttpStatus.OK);
 
   }
